@@ -12,10 +12,6 @@ def function():
     D_mod = list(D_set)
     D_mod.sort()
 
-    # variable initialize
-    D = []
-    D_set = set()
-
     # check length
     if(len(D_mod) > A+1):
         print('No')
