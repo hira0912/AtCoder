@@ -1,8 +1,11 @@
 def function():
+    # 標準入力
     n = int(input())
     a1 = []
     a2 = []
 
+    # x+yの2で割った余りが異なる点同士は到達不可能なので、
+    # それらを先に組み分けしておく
     for _ in range(n):
         a = list(map(int,input().split()))
         if((a[0]+a[1])%2 == 0):
@@ -10,6 +13,7 @@ def function():
         else:
             a2.append(a)
 
+    # 計算関数の定義
     def sumup(a):
         num = 0
         if(len(a)==0):
