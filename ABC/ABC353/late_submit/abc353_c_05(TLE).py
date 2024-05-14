@@ -1,17 +1,12 @@
 import bisect
 
 def function():
+    # 標準入力
     N = int(input())
     A = list(map(int,input().split()))
-    B = []
     A.sort()
 
-    for i in range(N):
-        if(i==0):
-            B.append(A[i])
-        else:
-            B.append(A[i]+B[i-1])
-
+    # 二分探索で導出
     k = 0
     for i in range(N-1):
         a = 10**8 - A[i] -1
