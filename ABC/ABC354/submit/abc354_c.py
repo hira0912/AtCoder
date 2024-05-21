@@ -1,4 +1,5 @@
 def function():
+    # 標準入力と配列格納
     m = int(input())
     data = []
     for i in range(m):
@@ -6,8 +7,10 @@ def function():
         k.append(i+1)
         data.append(k)
     
+    # 逆順ソート
     data.sort(reverse=True)
 
+    # 配列dataの読み込み、条件OKの要素だけ配列番号を配列xに書き出す
     x = []
     count = 0
     i = 0
@@ -24,11 +27,12 @@ def function():
                 x.append(data[i][2])
                 i_data = data[i][1]
                 i += 1
-        
         count += 1
 
+    # 配列xを昇順ソート
     x.sort()
     
+    # 配列xの長さと要素を出力
     print(len(x))
     print(*x)
 
