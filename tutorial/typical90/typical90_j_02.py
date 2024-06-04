@@ -1,6 +1,8 @@
+# 標準入力及び配列の初期化
 N = int(input())
 data = []
 
+# 累積和の計算
 for i in range(N):
     dt = list(map(int,input().split()))
     if(i==0):
@@ -15,6 +17,7 @@ for i in range(N):
         else:
             data.append([data[i-1][0],data[i-1][1]+dt[1]])
 
+# 課題情報の入出力
 Q = int(input())
 for j in range(Q):
     question = list(map(int,input().split()))
