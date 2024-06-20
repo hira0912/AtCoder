@@ -12,7 +12,7 @@ def function():
             return True
         return False
     
-    if(calc(X[0],X[1])==True and calc(X[1],X[2])==True and calc(X[2],X[3])==True):
+    if(calc(X[0],X[1]) = =True and calc(X[1],X[2]) == True and calc(X[2],X[3]) == True):
         ans = 'Weak'
     print(ans)
     return
