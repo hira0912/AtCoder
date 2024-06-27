@@ -1,44 +1,62 @@
 def function():
+    # 標準入力
     S = list(map(int,input().split()))
     T = list(map(int,input().split()))
 
-    ydt = abs(T[1]-S[1])
-    xdt = abs(T[0]-S[0])
-    if(ydt>=xdt):
-        print(ydt)
+    # 各座標系における距離の計算
+    dy = abs(T[1]-S[1])
+    dx = abs(T[0]-S[0])
+
+    # もし点間距離がx座標系よりy座標系の方が大きければ、y座標の差を出力する
+    if(dy>=dx):
+        print(dy)
         return
-    
-    SLR = (S[0]+S[1])%2
-    TLR = (T[0]+T[1])%2
+
+    # 各点の左右位置を格納
+    S_LR = (S[0]+S[1])%2
+    T_LR = (T[0]+T[1])%2
+
+    # 点Sが点Tより左側にある場合
     if(S[0]<=T[0]):
-        xk = S[0]
-        if(SLR == 0):
-            xk += 1
-        xk += ydt
-        xkLR = (xk+T[1])%2
-        if(xkLR==TLR):
-            ans = ydt+(T[0]-xk)//2
-        elif(xkLR==1 and TLR==0):
-            ans = ydt+(T[0]+1-xk)//2
+        # 点Sの初期位置がタイルの左側の場合、右側に寄せる
+        newPoint_x = S[0]
+        if(S_LR == 0):
+            newPoint_x += 1
+
+        # y軸を点Tの位置まで動かし、右側に寄せる
+        newPoint_x += dy
+        newPoint_LR = (newPoint_x + T[1])%2
+
+        # 通過タイル数を算出して出力
+        if(newPoint_LR==T_LR):
+            ans = (T[0]-newPoint_x)//2 + dy
+        elif(newPoint_LR==1 and T_LR==0):
+            ans = (T[0]-newPoint_x+1)//2 + dy
         else:
-            ans = ydt+(T[0]-xk-1)//2
+            ans = (T[0]-newPoint_x-1)//2 + dy
         print(ans)
         return
 
+    # 点Tが点Sより左側にある場合
     else:
-        xk = T[0]
-        if(TLR == 0):
-            xk += 1
-        xk += ydt
-        xkLR = (xk+S[1])%2
-        if(xkLR==SLR):
-            ans = ydt+(S[0]-xk)//2
-        elif(xkLR==1 and SLR==0):
-            ans = ydt+(S[0]+1-xk)//2
+        # 点Tの初期位置がタイルの左側の場合、右側に寄せる
+        newPoint_x = T[0]
+        if(T_LR == 0):
+            newPoint_x += 1
+
+        # y軸を点Sの位置まで動かし、右側に寄せる
+        newPoint_x += dy
+        newPoint_LR = (newPoint_x + S[1])%2
+
+        # 通過タイル数を算出して出力
+        if(newPoint_LR==S_LR):
+            ans = (S[0]-newPoint_x)//2 + dy
+        elif(newPoint_LR==1 and S_LR==0):
+            ans = (S[0]-newPoint_x+1)//2 + dy
         else:
-            ans = ydt+(S[0]-xk-1)//2
+            ans = (S[0]-newPoint_x-1)//2 + dy
         print(ans)
-        return                
+        return
     return
 
 if __name__ == "__main__":
