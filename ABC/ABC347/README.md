@@ -5,3 +5,7 @@
 
 ## URL
 https://atcoder.jp/contests/abc347
+
+## note
+【ABC347】AtCoder ABC347 Problem Cを解き直す
+https://note.com/hira0912/n/n7f1246c7ef6f
