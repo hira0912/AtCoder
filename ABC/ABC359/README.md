@@ -5,3 +5,7 @@
 
 ## URL
 https://atcoder.jp/contests/abc359
+
+## note
+【ABC359】AtCoder ABC359 Problem Cを解き直す
+https://note.com/hira0912/n/nb0716da3b9fa
