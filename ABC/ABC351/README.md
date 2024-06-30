@@ -5,3 +5,7 @@
 
 ## URL
 https://atcoder.jp/contests/abc351
+
+## note
+【ABC351】AtCoder ABC351 Problem Eを解き直す
+https://note.com/hira0912/n/nc350a4926c43
