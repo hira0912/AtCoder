@@ -3,7 +3,6 @@ def function():
     A = list(map(int,input().split()))
 
     k = A[1]/A[0]
-
     for i in range(1,N):
         if(A[i]/A[i-1] != k):
             print('No')
