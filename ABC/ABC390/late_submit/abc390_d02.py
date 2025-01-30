@@ -12,9 +12,12 @@ def function():
     return
 
 def calc(index:int, size:int) -> None:
+    # index over
     if(index>=N):
         B.add(xor(S))
         return
+    
+    # dfs
     for i in range(size+1):
         S[i] += A[index]
         if(i<size):
@@ -23,6 +26,7 @@ def calc(index:int, size:int) -> None:
             calc(index+1,size+1)
         S[i] -= A[index]           
 
+# calculate xor
 def xor(A:list)->int:
     ret = A[0]
     for i in range(1,len(A)):
