@@ -1,4 +1,4 @@
-# AtCoder Daily Training EASY 2025/0204 03
+# AtCoder Daily Training EASY 2025/0204 19:30
 
 ## contest date 
 2025/02/04 19:30 ~ 20:30
